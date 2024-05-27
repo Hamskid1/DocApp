@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+:root{
+    --mainColor:#29335C;
+    --mainColorLight:rgb(86, 154, 243);
+    --secondaryColor:#d30000;
+    --textColor:#000;  
+    --textColors:#FFF;  
+    --backColor:#363535; 
+    --faColor:#0151CA;
+    --faColorHover:#3e74c6;
+    --twiColor:rgb(255, 0, 191); 
+    --gitColor:rgb(255, 123, 0); 
+}
+
+body{
+    background-color: var(--textColors);
+    color: var(--textColor);
+}
+
+body a{
+    color: var(--textColor);
+}
+
+nav {
+    background:transparent !important;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    border-bottom: 1px solid var(--textColor);
+    align-items: center;
+
+}
+
+#Plus {
+    width: 40px;
+    height:40px;
+    border: 2px solid var(--faColor);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    align-content:center;
+    margin-left: 20px;
+    background: var(--faColor);
+    & .fa-solid {
+        margin-left: 10px;
+        color: var(--textColors);
+    }
+}
+
+#mainHeader{
+    position: relative;
+    top: 16%;
+}
+
+nav #mainMenu {
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav #mainMenu #icons{
+    display: flex;
+}
+
+
+nav #mainMenu li a{
+    float: left;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-bottom: 5px solid transparent;
+}
+
+nav #mainMenu li a:hover {
+  border-bottom: 1px solid var(--faColor);
+}
+
+nav #openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+nav #mainMenu #closeMenu , #icons i   {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+#Booking{
+    width: 150px;
+    height: 50px;
+    margin-right: 20px;
+    margin-left: 90px;
+    background: var(--faColor);
+    border-radius: 10px;
+    color: var(--textColors);
+}
+
+#Booking:hover{
+    background: var(--faColorHover);
+}
+
+
+
+@media (max-width:880px) {
+    nav #mainMenu{
+        height: 80vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center; 
+        background: var(--backColor);
+        transition:  top 2s ease;
+        display: none;
+    }
+
+    nav #mainMenu #closeMenu {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    nav #openMenu{
+        display: block;
+    }
+
+    nav #mainMenu li a:hover {
+        background: none;
+        color: var(--gitColor);
+        font-size: 1.7rem;
+    }
+
+    #icons i {
+        display: inline-block;
+        padding: 12px;
+
+    }
+
+    #Booking{
+        margin-left: 20px;
+    }
+}
